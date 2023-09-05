@@ -3,7 +3,7 @@ defmodule OpenAI.Finetunes do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @finetuning_base_url "/v1/fine-tuning"
+  @finetuning_base_url "/v1/fine_tuning"
 
   def url(), do: @finetuning_base_url
   def url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}"
