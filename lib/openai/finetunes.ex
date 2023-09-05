@@ -7,6 +7,7 @@ defmodule OpenAI.Finetunes do
 
   def url(), do: @finetuning_base_url
   def url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}"
+  def create_url(), do: "#{@finetuning_base_url}/jobs"
   def cancel_url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}/cancel"
   def events_url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}/events"
 
@@ -21,7 +22,7 @@ defmodule OpenAI.Finetunes do
   end
 
   def create(params, config \\ %Config{}) do
-    url()
+    create_url()
     |> Client.api_post(params, config)
   end
 
