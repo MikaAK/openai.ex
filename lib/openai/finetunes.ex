@@ -3,11 +3,12 @@ defmodule OpenAI.Finetunes do
   alias OpenAI.Client
   alias OpenAI.Config
 
-  @finetuning_base_url "/v1/fine_tuning"
+  @finetuning_base_url "/v1/fine-tunes"
+  @new_finetuning_base_url "/v1/fine_tuning"
 
   def url(), do: @finetuning_base_url
   def url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}"
-  def create_url(), do: "#{@finetuning_base_url}/jobs"
+  def create_url(), do: "#{@new_finetuning_base_url}/jobs"
   def cancel_url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}/cancel"
   def events_url(finetune_id), do: "#{@finetuning_base_url}/#{finetune_id}/events"
 
